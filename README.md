@@ -1,3 +1,5 @@
+![Logo](https://github.com/MichaelBlakeOIT/ASI-Camera-GUI/blob/master/Logo.png)
+
 # ASI-Camera-GUI
 Planetary imaging application for ASI cameras. Shows you a live preview from any ASI camera, and allows you to configure settings, take images, and record videos.
 
