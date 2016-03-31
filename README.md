@@ -1,20 +1,18 @@
 # ASI-Camera-GUI
 Planetary imaging application for ASI cameras.
 
-# Technologies
+### Technologies
 C++, QT, OpenCV
 
-# Screenshots
+### Screenshots
 ![Firecapture Screenshot](http://www.astrophotography-tonight.com/wp-content/uploads/2013/12/FireCapture-ASI120mm.jpg)
 
-# Bugs
+### Bugs
 No current bugs
 
-# Contributors
+### Contributors
 Michael Blake
 https://github.com/MichaelBlakeOIT
 
-# Inspiration
+### Inspiration
 I wanted to make a personal project that relates to one of my hobbies. I felt a program to do planetary imaging would help me learn a lot and also be something I'd enjoy making.
-
-#
