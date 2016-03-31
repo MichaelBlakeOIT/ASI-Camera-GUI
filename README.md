@@ -19,7 +19,8 @@ C++, QT, OpenCV
 No current bugs
 
 ### Contributors
-Michael Blake:
+Michael Blake
+
 https://github.com/MichaelBlakeOIT
 
 ### Inspiration
