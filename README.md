@@ -8,6 +8,10 @@ C++, QT, OpenCV
 ![Firecapture Screenshot](http://www.astrophotography-tonight.com/wp-content/uploads/2013/12/FireCapture-ASI120mm.jpg)
 
 (Screenshot of FireCapture)
+### Installation
+1. Install Qt 5.6
+2. Open project 
+3. Clean all, run qmake, build all, run. 
 
 ### Bugs
 No current bugs
