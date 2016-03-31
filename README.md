@@ -19,9 +19,7 @@ C++, QT, OpenCV
 No current bugs
 
 ### Contributors
-Michael Blake
-
-https://github.com/MichaelBlakeOIT
+[Michael Blake](https://github.com/MichaelBlakeOIT)
 
 ### Inspiration
 I wanted to make a personal project that relates to one of my hobbies. I felt a program to do planetary imaging would help me learn a lot and also be something I'd enjoy making.
