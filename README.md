@@ -1,5 +1,5 @@
 # ASI-Camera-GUI
-Planetary imaging application for ASI cameras.
+Planetary imaging application for ASI cameras. Shows you a live preview from any ASI camera, and allows you to configure settings, take images, and record videos.
 
 ### Technologies
 C++, QT, OpenCV
