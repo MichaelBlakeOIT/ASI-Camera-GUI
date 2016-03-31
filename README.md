@@ -6,12 +6,13 @@ C++, QT, OpenCV
 
 ### Screenshots
 ![Firecapture Screenshot](http://www.astrophotography-tonight.com/wp-content/uploads/2013/12/FireCapture-ASI120mm.jpg)
+(Screenshot of FireCapture)
 
 ### Bugs
 No current bugs
 
 ### Contributors
-Michael Blake
+Michael Blake:
 https://github.com/MichaelBlakeOIT
 
 ### Inspiration
