@@ -24,7 +24,7 @@ void CameraControls::setGamma(int gamma)
 
 bool CameraControls::connectCamera()
 {
-
+    return true;
 }
 
 void CameraControls::endCapture()
