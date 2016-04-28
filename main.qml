@@ -36,7 +36,7 @@ QtObject
             Tab
             {
                 title: "Settings";
-                Settings
+                AppSettings
                 {
 
                 }

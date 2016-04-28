@@ -2,6 +2,6 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>Controls.qml</file>
-        <file>Settings.qml</file>
+        <file>AppSettings.qml</file>
     </qresource>
 </RCC>
