@@ -2,6 +2,7 @@ import QtQuick 2.4
 import QtQuick.Controls 1.4
 import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
+import QtQuick.Layouts 1.1
 
 QtObject
 {
@@ -12,7 +13,37 @@ QtObject
         height: 700
         color: "#F0F0F0"
         title: "Control Window";
-        Rectangle
+        TabView
+        {
+            id: tabView
+
+            anchors.fill: parent
+            //anchors.margins: UI.margin
+            //tabPosition: UI.tabPosition
+
+            Layout.minimumWidth: 360
+            Layout.minimumHeight: 360
+            Layout.preferredWidth: 480
+            Layout.preferredHeight: 640
+
+            Tab {
+                title: "Controls"
+                Controls
+                {
+
+                }
+            }
+            Tab
+            {
+                title: "Settings";
+                Settings
+                {
+
+                }
+            }
+        }
+
+        /*Rectangle
         {
             z: 1;
             id: capButton;
@@ -30,8 +61,42 @@ QtObject
             {
                 hoverEnabled: true;
                 anchors.fill: parent;
-                onHoveredChanged: containsMouse ? buttonShadow.visible = true : buttonShadow.visible = false;
+                //onHoveredChanged: containsMouse ? buttonShadow.visible = true : buttonShadow.visible = false;
             }
+        }
+        Rectangle
+        {
+            //z: 1;
+            id: stillButton;
+            width: parent.width;
+            //height: 50;
+            anchors.top: capButton.bottom;
+            color: "#1790FF";
+            Text
+            {
+                text: "Take Still";
+                anchors.horizontalCenter: stillButton.horizontalCenter;
+                anchors.verticalCenter: stillButton.verticalCenter;
+                font.pointSize: 18;
+            }
+            MouseArea
+            {
+                hoverEnabled: true;
+                anchors.fill: parent;
+                //onHoveredChanged: containsMouse ? buttonShadow.visible = true : buttonShadow.visible = false;
+            }
+        }
+        /*DropShadow
+        {
+            visible: false;
+            z: 0;
+            id: stillShadow;
+            anchors.fill: stillButton;
+            verticalOffset: 3;
+            radius: 5.0;
+            samples: 17;
+            color: "#80000000";
+            source: stillButton;
         }
         DropShadow
         {
@@ -88,7 +153,7 @@ QtObject
             anchors.topMargin: 20;
             anchors
             {
-                top: capButton.bottom;
+                top: stillButton.bottom;
                 horizontalCenter: capButton.horizontalCenter;
             }
         }
@@ -113,7 +178,7 @@ QtObject
                 top: gain.bottom;
                 horizontalCenter: capButton.horizontalCenter;
             }
-        }
+        }*/
     }
     property var testWindow: Window
     {
