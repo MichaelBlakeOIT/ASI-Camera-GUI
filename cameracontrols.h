@@ -11,7 +11,7 @@ public:
     void setExposure(int exposure);
     void setGain(int gain);
     void setGamma(int gamma);
-    bool connectCamera();
+    void connectCamera();
     void endCapture();
     ~CameraControls();
 private:
