@@ -7,9 +7,8 @@ Planetary imaging application for ASI cameras. Shows you a live preview from any
 C++, QT, OpenCV
 
 ### Screenshots
-![Firecapture Screenshot](http://www.astrophotography-tonight.com/wp-content/uploads/2013/12/FireCapture-ASI120mm.jpg)
+![Screenshot](https://github.com/MichaelBlakeOIT/ASI-Camera-GUI/blob/master/screenshot.png)
 
-(Screenshot of FireCapture)
 ### Installation
 1. Install Qt 5.6
 2. Open project 
