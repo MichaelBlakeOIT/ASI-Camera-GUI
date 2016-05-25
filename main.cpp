@@ -15,10 +15,6 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
     CameraControls c;
     engine.rootContext()->setContextProperty("Camera", &c);
-    //CameraControls::connectCameraa();
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    //c.connectCamera();
-    //tempFunction();
-
     return app.exec();
 }

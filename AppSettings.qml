@@ -47,7 +47,7 @@ Item {
         anchors.verticalCenter: nameField.verticalCenter;
         id: nameLabel;
         x: 10;
-        text: "File base name"
+        text: "File name"
     }
     TextField {
         id: nameField;

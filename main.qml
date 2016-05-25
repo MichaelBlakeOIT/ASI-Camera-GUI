@@ -58,7 +58,7 @@ QtObject
             {
                 text: "This application is meant to be used with a ZWO ASI120MC camera.\n\
 Please contact me if you need to test all functionality.";
-                horizontalAlignment: parent.horizontalCenter;
+                //horizontalAlignment: parent.horizontalCenter;
             }
         }
     }

@@ -22,8 +22,9 @@ void CameraControls::connectCamera()
             setImageFormat(640, 480, 1, IMG_Y8);
             cvNamedWindow("video", 1);
             m_pRgb=cvCreateImage(cvSize(getWidth(),getHeight()), IPL_DEPTH_8U, 1);
-            setValue(CONTROL_EXPOSURE, 25000, false);
-            setValue(CONTROL_GAIN, 50, false);
+            setValue(CONTROL_EXPOSURE, m_exposure * 500, false);
+            setValue(CONTROL_GAIN, m_gain, false);
+            setValue(CONTROL_GAIN, m_gamma, false);
             startCapture();
             while(c != 27)
             {
@@ -42,7 +43,7 @@ void CameraControls::setExpose(int exposure)
     if(m_exposure != exposure)
     {
         m_exposure = exposure;
-        setValue(CONTROL_EXPOSURE, exposure*500, false);
+        setValue(CONTROL_EXPOSURE, exposure * 500, false);
     }
 }
 
@@ -67,10 +68,12 @@ void CameraControls::setGamma(int gamma)
 void CameraControls::captureImage()
 {
     //m_pRgb=cvCreateImage(cvSize(getWidth(),getHeight()), IPL_DEPTH_8U, 1);
-    getImageData((BYTE*)m_pRgb->imageData, m_pRgb->imageSize, -1);
-
-    QByteArray ba = m_path.toLatin1();
-    cvSaveImage(ba.data(), m_pRgb);
+    if(getNumberOfConnectedCameras())
+    {
+        getImageData((BYTE*)m_pRgb->imageData, m_pRgb->imageSize, -1);
+        QByteArray ba = m_path.toLatin1();
+        cvSaveImage(ba.data(), m_pRgb);
+    }
 }
 
 void CameraControls::captureVideo()
