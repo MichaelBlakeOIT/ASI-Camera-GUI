@@ -1,6 +1,6 @@
 TEMPLATE = app
 
-QT += qml quick #widgets
+QT += qml quick widgets
 CONFIG += c++11
 
 SOURCES += main.cpp \
@@ -24,3 +24,6 @@ include(deployment.pri)
 
 #HEADERS += \
 #    cameracontrols.h
+
+HEADERS += \
+    cameracontrols.h

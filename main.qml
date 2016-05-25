@@ -183,8 +183,8 @@ QtObject
     property var testWindow: Window
     {
         visible: true;
-        width: 700;
-        height: controlWindow.height;
+        width: 400;
+        height: 200;
         title: "Live View Window";
         flags: Qt.Window | Qt.WindowFullscreenButtonHint;
         color: "#F0F0F0";
@@ -193,8 +193,9 @@ QtObject
             anchors.fill: parent;
             Text
             {
-                text: "Welcome to my planetary imaging application.
-This will be where the live feed of the camera will go. Move this (or exit) to see the control window.";
+                text: "This application is meant to be used with a ZWO ASI120MC camera.\n\
+Please contact me if you need to test all functionality.";
+                horizontalAlignment: parent.horizontalCenter;
             }
         }
     }

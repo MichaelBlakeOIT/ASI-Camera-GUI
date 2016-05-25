@@ -2,22 +2,32 @@
 #define CAMERACONTROLS_H
 
 #include <string>
+#include <qobject.h>
 
-class CameraControls
+#include "OpenCV/include/cxcore.h"
+#include "opencv/include/highgui.h"
+
+class CameraControls : public QObject
 {
+    Q_OBJECT
 public:
-    CameraControls();
-    void startCapture();
-    void setExposure(int exposure);
-    void setGain(int gain);
-    void setGamma(int gamma);
-    void connectCamera();
-    void endCapture();
+    CameraControls(QObject *parent = 0);
+    //void startCapture();
+    Q_INVOKABLE void setExpose(int exposure);
+    Q_INVOKABLE void setGain(int gain);
+    Q_INVOKABLE void setGamma(int gamma);
+    Q_INVOKABLE void connectCamera();
+    Q_INVOKABLE void captureImage();
+    Q_INVOKABLE void captureVideo();
+    //void endCapture();
     ~CameraControls();
 private:
     int m_gain;
     int m_exposure;
     int m_gamma;
+    IplImage * m_pRgb;
+    CvSize m_size;
 };
+
 
 #endif // CAMERACONTROLS_H
