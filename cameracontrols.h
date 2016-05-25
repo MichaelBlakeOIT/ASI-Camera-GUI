@@ -3,6 +3,7 @@
 
 #include <string>
 #include <qobject.h>
+#include <qstring.h>
 
 #include "OpenCV/include/cxcore.h"
 #include "opencv/include/highgui.h"
@@ -19,6 +20,8 @@ public:
     Q_INVOKABLE void connectCamera();
     Q_INVOKABLE void captureImage();
     Q_INVOKABLE void captureVideo();
+    Q_INVOKABLE void setPath(QString path);
+    Q_INVOKABLE void setName(QString name);
     //void endCapture();
     ~CameraControls();
 private:
@@ -27,6 +30,8 @@ private:
     int m_gamma;
     IplImage * m_pRgb;
     CvSize m_size;
+    QString m_path;
+    QString m_name;
 };
 
 

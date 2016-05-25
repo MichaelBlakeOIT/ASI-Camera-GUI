@@ -16,6 +16,7 @@ Item {
     TextField {
         id: pathField;
         y: 10;
+        objectName: "path"
         width: parent.width * .5;
         anchors.leftMargin: 10;
         height: 20;
@@ -35,6 +36,10 @@ Item {
                 border.color: "#333"
                 border.width: 1
             }
+        }
+        onFocusChanged:
+        {
+            Camera.setPath(text);
         }
     }
     Label
@@ -61,6 +66,10 @@ Item {
                 border.color: "#333"
                 border.width: 1
             }
+        }
+        onFocusChanged:
+        {
+            Camera.setName(text);
         }
     }
 }

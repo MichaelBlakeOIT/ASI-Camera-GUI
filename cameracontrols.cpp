@@ -68,19 +68,33 @@ void CameraControls::captureImage()
 {
     //m_pRgb=cvCreateImage(cvSize(getWidth(),getHeight()), IPL_DEPTH_8U, 1);
     getImageData((BYTE*)m_pRgb->imageData, m_pRgb->imageSize, -1);
-    cvSaveImage("test.png", m_pRgb);
+
+    QByteArray ba = m_path.toLatin1();
+    cvSaveImage(ba.data(), m_pRgb);
 }
 
 void CameraControls::captureVideo()
 {
-    int codec = CV_FOURCC('P','I','M','1');
-    CvVideoWriter * vwriter = cvCreateVideoWriter("test.avi", codec, 15, m_size);
-    int a = 100;
-    while ( a > 0 ) {
+    int codec = CV_FOURCC('M','P','4','2');
+    CvSize size = cvSize(640,480);
+    CvVideoWriter * vwriter = cvCreateVideoWriter("test.avi", codec, 15, size);
+    for(int i = 0; i < 100; i++)
+    {
+        getImageData((BYTE*)m_pRgb->imageData, m_pRgb->imageSize, -1);
+        cvShowImage("video", m_pRgb);
         cvWriteToAVI(vwriter, m_pRgb);
-        a--;
     }
     cvReleaseVideoWriter(&vwriter);
+}
+
+void CameraControls::setPath(QString path)
+{
+    m_path = path;
+}
+
+void CameraControls::setName(QString name)
+{
+    m_name = name;
 }
 
 CameraControls::~CameraControls()
