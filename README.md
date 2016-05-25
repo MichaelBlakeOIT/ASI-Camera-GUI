@@ -7,7 +7,7 @@ Planetary imaging application for ASI cameras. Shows you a live preview from any
 C++, QT, OpenCV
 
 ### Screenshots
-![Screenshot](https://github.com/MichaelBlakeOIT/ASI-Camera-GUI/blob/master/screenshot.png)
+![Screenshot](https://github.com/MichaelBlakeOIT/ASI-Camera-GUI/blob/master/daa63b91afdef42a36c7429d8cfcba29.png?raw=true)
 
 ### Installation
 1. Install Qt 5.6
