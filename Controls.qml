@@ -244,4 +244,35 @@ Item
               horizontalCenter: capButton.horizontalCenter;
           }
       }
+      Label
+      {
+          id: tempText;
+          text: "Sensor Temperature: " + Camera.getTemp();
+
+          Timer
+          {
+              interval: 500;
+              running: true;
+              repeat: true
+              onTriggered: tempText.text = "Sensor Temperature: " + Camera.getTemp() + "° C";
+          }
+          anchors
+          {
+              top: gamma.bottom;
+              topMargin: 20;
+              horizontalCenter: capButton.horizontalCenter;
+          }
+      }
+      RadioButton
+      {
+          id: autoExpose
+          text: "Auto Exposure";
+          anchors
+          {
+              top: tempText.bottom;
+              topMargin: 20;
+              horizontalCenter: capButton.horizontalCenter;
+          }
+          onClicked: Camera.setExpose(checked);
+      }
 }

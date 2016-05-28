@@ -41,6 +41,14 @@ QtObject
 
                 }
             }
+            Tab
+            {
+                title: "Info"
+                Info
+                {
+
+                }
+            }
         }
     }
     property var testWindow: Window

@@ -3,5 +3,6 @@
         <file>main.qml</file>
         <file>Controls.qml</file>
         <file>AppSettings.qml</file>
+        <file>Info.qml</file>
     </qresource>
 </RCC>

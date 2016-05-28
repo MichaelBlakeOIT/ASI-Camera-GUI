@@ -22,6 +22,10 @@ public:
     Q_INVOKABLE void captureVideo();
     Q_INVOKABLE void setPath(QString path);
     Q_INVOKABLE void setName(QString name);
+    Q_INVOKABLE double getTemp();
+    Q_INVOKABLE void setAutoExpose(bool expose);
+    Q_INVOKABLE void setAutoGain(bool gain);
+    Q_INVOKABLE void setAutoGamma(bool gamma);
     //void endCapture();
     ~CameraControls();
 private:
@@ -32,6 +36,10 @@ private:
     CvSize m_size;
     QString m_path;
     QString m_name;
+    bool m_connected;
+    bool m_autoExpose;
+    bool m_autoGain;
+    bool m_autoGamma;
 };
 
 

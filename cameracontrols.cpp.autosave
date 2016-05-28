@@ -117,7 +117,6 @@ void CameraControls::setAutoExpose(bool expose)
 {
     m_autoExpose = expose;
     setValue(CONTROL_EXPOSURE, m_exposure * 500, m_autoExpose);
-    qDebug() << "Called";
 }
 
 void CameraControls::setAutoGain(bool gain)
