@@ -24,14 +24,14 @@ public:
     Q_INVOKABLE void setName(QString name);
     Q_INVOKABLE double getTemp();
     Q_INVOKABLE void setAutoExpose(bool expose);
-    Q_INVOKABLE void setAutoGain(bool gain);
-    Q_INVOKABLE void setAutoGamma(bool gamma);
+    Q_INVOKABLE int getFrames();
     //void endCapture();
     ~CameraControls();
 private:
     int m_gain;
     int m_exposure;
     int m_gamma;
+    int m_frames;
     IplImage * m_pRgb;
     CvSize m_size;
     QString m_path;

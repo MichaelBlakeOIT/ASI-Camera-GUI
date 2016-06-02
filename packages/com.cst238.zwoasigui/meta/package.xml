@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package>
+    <DisplayName>ZWO ASI GUI</DisplayName>
+    <Description>Installer for GUI</Description>
+    <Version>0.1.0-1</Version>
+    <ReleaseDate>2016-06-01</ReleaseDate>
+    <Licenses>
+        <License name="License Agreement" file="license.txt" />
+    </Licenses>
+    <Default>script</Default>
+    <Script>installscript.qs</Script>
+    <UserInterfaces>
+        <UserInterface>installerui.ui</UserInterface>
+    </UserInterfaces>
+</Package>

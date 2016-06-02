@@ -6,7 +6,7 @@
 #include "opencv/include/highgui.h"
 
 CameraControls::CameraControls(QObject * parent) : m_pRgb(nullptr), m_gain(50), m_exposure(50), m_gamma(50), m_size(cvSize(640,480)),
-    m_connected(false), m_autoExpose(false), m_autoGain(false), m_autoGamma(false)
+    m_connected(false), m_autoExpose(false), m_autoGain(false), m_autoGamma(false), m_frames(0)
 {}
 
 void CameraControls::connectCamera()
@@ -18,8 +18,11 @@ void CameraControls::connectCamera()
         bresult = openCamera(0);
         if(bresult)
         {
-            m_connected = true;
+            int time1 = 0;
+            int time2 = 0;
+            int count = 0;
             char c = 0;
+            m_connected = true;
             initCamera();
             setImageFormat(640, 480, 1, IMG_Y8);
             cvNamedWindow("video", 1);
@@ -28,11 +31,19 @@ void CameraControls::connectCamera()
             setValue(CONTROL_GAIN, m_gain, m_autoGain);
             setValue(CONTROL_GAIN, m_gamma, m_autoGamma);
             startCapture();
+            time1 = GetTickCount();
             while(c != 27)
             {
                 getImageData((BYTE*)m_pRgb->imageData, m_pRgb->imageSize, -1);
                 cvShowImage("video", m_pRgb);
                 c=cvWaitKey(1);
+                time2 = GetTickCount();
+                count++;
+                if(time2-time1 > 1000 )
+                {
+                    count = 0;
+                    time1=GetTickCount();
+                }
             }
             //qDebug() << getSensorTemp() << '\n';
             m_connected = false;
@@ -117,17 +128,11 @@ void CameraControls::setAutoExpose(bool expose)
 {
     m_autoExpose = expose;
     setValue(CONTROL_EXPOSURE, m_exposure * 500, m_autoExpose);
-    qDebug() << "Called";
 }
 
-void CameraControls::setAutoGain(bool gain)
+int CameraControls::getFrames()
 {
-
-}
-
-void CameraControls::setAutoGamma(bool gamma)
-{
-
+    return m_frames;
 }
 
 CameraControls::~CameraControls()

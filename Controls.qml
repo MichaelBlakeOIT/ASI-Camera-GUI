@@ -136,20 +136,7 @@ Item
               horizontalCenter: capButton.horizontalCenter;
               topMargin: 5;
           }
-          Timer
-          {
-              id: exposetimer;
-              interval: 200;
-              running: true;
-              repeat: false;
-              onTriggered:
-              {
-                  //if(!exposure.pressed)
-                  //{
-                  //    Camera.setExpose(exposure.value);
-                  //}
-              }
-          }
+
           onValueChanged:
           {
               //if(!exposetimer.running)
@@ -263,13 +250,37 @@ Item
               horizontalCenter: capButton.horizontalCenter;
           }
       }
+      Label
+      {
+          id: fpsText;
+          text: "Frames Per Second: " + Camera.getFrames();
+          Timer
+          {
+              id: fpstimer;
+              interval: 1000;
+              running: true;
+              repeat: false;
+              onTriggered:
+              {
+                  text = Camera.getFrames();
+                  count = 0;
+              }
+          }
+          anchors
+          {
+              top: tempText.bottom;
+              topMargin: 20;
+              horizontalCenter: capButton.horizontalCenter;
+          }
+      }
+
       RadioButton
       {
           id: autoExpose
           text: "Auto Exposure";
           anchors
           {
-              top: tempText.bottom;
+              top: fpsText.bottom;
               topMargin: 20;
               horizontalCenter: capButton.horizontalCenter;
           }
