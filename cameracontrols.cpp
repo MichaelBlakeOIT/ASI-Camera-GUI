@@ -59,7 +59,7 @@ void CameraControls::setExpose(int exposure)
     if(m_exposure != exposure)
     {
         m_exposure = exposure;
-        setValue(CONTROL_EXPOSURE, exposure * 500, false);
+        setValue(CONTROL_EXPOSURE, exposure * 500, m_autoExpose);
     }
 }
 
