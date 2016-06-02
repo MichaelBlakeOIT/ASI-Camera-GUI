@@ -20,7 +20,11 @@ Item {
         width: parent.width * .5;
         anchors.leftMargin: 10;
         height: 20;
-        anchors.left: pathLabel.right;
+        anchors
+        {
+            right: parent.right;
+            rightMargin: 20;
+        }
         text: settings_global.text;
         Settings
         {
@@ -52,11 +56,14 @@ Item {
     TextField {
         id: nameField;
         width: parent.width * .5;
-        anchors.leftMargin: 10;
-        anchors.topMargin: 10;
-        anchors.top: pathField.bottom;
+        anchors
+        {
+            right: parent.right;
+            rightMargin: 20;
+            topMargin: 10;
+            top: pathField.bottom;
+        }
         height: 20;
-        anchors.left: nameLabel.right;
         style: TextFieldStyle {
             textColor: "black"
             background: Rectangle {

@@ -130,6 +130,7 @@ Item
           maximumValue: 100;
           value: 50;
           width: capButton.width * .6;
+          enabled: !autoExpose.checked;
           anchors
           {
               top: exposureLabel.bottom;
